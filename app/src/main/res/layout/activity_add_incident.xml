@@ -1,0 +1,22 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView android:text="Nueva Incidencia" android:textSize="22sp" android:layout_marginBottom="20dp" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+
+    <EditText android:id="@+id/etLocation" android:hint="Ubicación (ej: Aula 202)" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+    <EditText android:id="@+id/etDeviceId" android:hint="ID Dispositivo (Etiqueta)" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+
+    <TextView android:text="Prioridad:" android:layout_marginTop="10dp" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+    <Spinner android:id="@+id/spPriority" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+
+    <TextView android:text="Tipo:" android:layout_marginTop="10dp" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+    <Spinner android:id="@+id/spType" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+
+    <EditText android:id="@+id/etDesc" android:hint="Descripción del problema..." android:lines="4" android:gravity="top" android:layout_marginTop="10dp" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+
+    <Button android:id="@+id/btnSave" android:text="Guardar Incidencia" android:layout_marginTop="20dp" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+
+</LinearLayout>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="tvTitle" type="id">tvTitle</item>
+    <item name="listView" type="id">listView</item>
+    <item name="fabAdd" type="id">fabAdd</item>
+    <item name="etLocation" type="id">etLocation</item>
+    <item name="etDeviceId" type="id">etDeviceId</item>
+    <item name="spPriority" type="id">spPriotiy</item>
+    <item name="spType" type="id">spType</item>
+    <item name="etDesc" type="id">etDesc</item>
+    <item name="btnSave" type="id">btnSave</item>
+</resources>
