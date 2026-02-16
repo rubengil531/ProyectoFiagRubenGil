@@ -8,8 +8,8 @@ android {
 
     defaultConfig {
         applicationId = "com.example.proyectofiagrubngil"
-        minSdk = 24 // Subido a 24 para compatibilidad con librerías modernas
-        targetSdk = 34
+        minSdk = 26 // Subido a 24 para compatibilidad con librerías modernas
+        targetSdk = 33
         versionCode = 1
         versionName = "1.0"
 
