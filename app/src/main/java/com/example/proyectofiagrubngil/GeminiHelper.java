@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 public class GeminiHelper {
     // Reemplaza esto con tu API Key real de Google AI Studio
-    private static final String API_KEY = "AQUI_TU_API_KEY";
+    private static final String API_KEY = "AIzaSyA6CZB3ijS9dp3gx7s4XWCo8xskJ7CsBkk";
     private static final String URL_STR = "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=" + API_KEY;
 
     public static String generateSummary(String incidentsText) {

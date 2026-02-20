@@ -1,3 +1,4 @@
+
 package com.example.proyectofiagrubngil;
 
 import android.os.Bundle;
@@ -5,6 +6,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class AddIncidentActivity extends AppCompatActivity {
@@ -21,7 +23,9 @@ public class AddIncidentActivity extends AppCompatActivity {
         Spinner spType = findViewById(R.id.spType);
         Button btnSave = findViewById(R.id.btnSave);
 
-        // Configurar Spinners
+        // Mensaje de privacidad obligatorio por rúbrica
+        Toast.makeText(this, "ATENCIÓN: No incluyas datos personales sensibles en la descripción.", Toast.LENGTH_LONG).show();
+
         String[] priorities = {"Baja", "Media", "Alta"};
         spPriority.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, priorities));
 
@@ -29,13 +33,22 @@ public class AddIncidentActivity extends AppCompatActivity {
         spType.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, types));
 
         btnSave.setOnClickListener(v -> {
+            String location = etLocation.getText().toString();
+            String desc = etDesc.getText().toString();
+
+            // Validación para no guardar incidencias vacías
+            if (location.isEmpty() || desc.isEmpty()) {
+                Toast.makeText(this, "Ubicación y Descripción son obligatorias", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
             new Thread(() -> {
                 Incident incident = new Incident(
-                        etLocation.getText().toString(),
+                        location,
                         spPriority.getSelectedItem().toString(),
                         spType.getSelectedItem().toString(),
                         etDeviceId.getText().toString(),
-                        etDesc.getText().toString(),
+                        desc,
                         System.currentTimeMillis(),
                         "Abierta"
                 );

@@ -1,6 +1,7 @@
 package com.example.proyectofiagrubngil;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.util.Log;
 import androidx.annotation.NonNull;
 import androidx.work.Worker;
@@ -38,10 +39,13 @@ public class SummaryWorker extends Worker {
     }
 
     private void sendEmailSimulation(String body) {
-        // En una app real aquí usarías JavaMail API.
-        // Para el proyecto, imprimimos en Logcat para demostrar que funciona.
+        // Cargar email guardado en la configuración
+        SharedPreferences prefs = getApplicationContext().getSharedPreferences("FIAG_PREFS", Context.MODE_PRIVATE);
+        String emailDestino = prefs.getString("admin_email", "admin@iescierva.net");
+
+        // Imprimir en Logcat de forma limpia
         Log.i("CORREO_ENVIADO", "--------------------------------------------------");
-        Log.i("CORREO_ENVIADO", "PARA: admin@instituto.es");
+        Log.i("CORREO_ENVIADO", "PARA: " + emailDestino);
         Log.i("CORREO_ENVIADO", "ASUNTO: Resumen Automático de Incidencias (IA)");
         Log.i("CORREO_ENVIADO", "CUERPO:\n" + body);
         Log.i("CORREO_ENVIADO", "--------------------------------------------------");
