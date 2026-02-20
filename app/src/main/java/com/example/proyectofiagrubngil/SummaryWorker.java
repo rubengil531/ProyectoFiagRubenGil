@@ -1,6 +1,7 @@
 package com.example.proyectofiagrubngil;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.util.Log;
 import androidx.annotation.NonNull;
 import androidx.work.Worker;
@@ -45,5 +46,9 @@ public class SummaryWorker extends Worker {
         Log.i("CORREO_ENVIADO", "ASUNTO: Resumen Automático de Incidencias (IA)");
         Log.i("CORREO_ENVIADO", "CUERPO:\n" + body);
         Log.i("CORREO_ENVIADO", "--------------------------------------------------");
+        SharedPreferences prefs = getApplicationContext().getSharedPreferences("FIAG_PREFS", Context.MODE_PRIVATE);
+        String emailDestino = prefs.getString("admin_email", "admin@iescierva.net");
+
+        Log.i("CORREO_ENVIADO", "PARA: " + emailDestino);
     }
 }

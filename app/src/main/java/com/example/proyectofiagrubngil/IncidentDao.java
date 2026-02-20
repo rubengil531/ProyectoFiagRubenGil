@@ -21,4 +21,7 @@ public interface IncidentDao {
     // Filtro para enviar a la IA solo las pendientes [cite: 34]
     @Query("SELECT * FROM incidents WHERE status != 'Resuelta'")
     List<Incident> getPending();
+
+    @Query("SELECT * FROM incidents WHERE status = :status ORDER BY timestamp DESC")
+    List<Incident> getByStatus(String status);
 }

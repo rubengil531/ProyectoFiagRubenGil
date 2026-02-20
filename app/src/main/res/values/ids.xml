@@ -9,4 +9,9 @@
     <item name="spType" type="id" />
     <item name="etDesc" type="id" />
     <item name="btnSave" type="id" />
+    <item name="filterLayout" type="id"/>
+    <item name="btnAll" type="id"/>
+    <item name="btnPending" type="id"/>
+    <item name="etAdminEmail" type="id"/>
+    <item name="btnSaveConfig" type="id" />
 </resources>
